@@ -7,8 +7,8 @@ import { v4 as uuidv4 } from 'uuid';
 const FormContainer = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Alinha o conteúdo verticalmente no centro */
-    align-items: center; /* Alinha o conteúdo horizontalmente no centro */
+    justify-content: center; 
+    align-items: center; 
     gap: 8px;
     margin-bottom: 16px;
     background-color: #f9f9f9;
@@ -16,12 +16,7 @@ const FormContainer = styled.div`
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     
-  position: fixed; /* Use fixed ou absolute */
-  top: 50%; /* Posiciona a partir do topo */
-  left: 50%; /* Posiciona a partir da esquerda */
-  transform: translate(-50%, -50%); /* Move para o centro */
-  width: 90%; /* Defina a largura como desejado */
-  max-width: 400px; /* Largura máxima opcional */
+
 `;
 
 
@@ -39,7 +34,7 @@ const Input = styled.input`
     width: 100%;
     max-width: 200px;
     &:focus {
-        border-color: #007bff;
+        border-color: #010bff;
 }
 `;
 
@@ -75,7 +70,6 @@ const ContactForm: React.FC<ContactFormProps> = ({ contactToEdit }) => {
     const dispatch = useDispatch();
 
 const handleSubmit = () => {
-    // Verifica se os campos estão preenchidos
     if (!name || !email || !phone) {
         setError('Por favor, preencha todos os campos antes de adicionar.');
         return;
@@ -94,7 +88,6 @@ const handleSubmit = () => {
         dispatch(addContact(contact));
     }
 
-    // Limpa os campos e a mensagem de erro
     setName('');
     setEmail('');
     setPhone('');
